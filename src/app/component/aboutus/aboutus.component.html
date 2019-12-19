@@ -1,0 +1,20 @@
+<ul *ngFor='let skill of skills;let i = index;'>
+    <li>{{i+1}}. {{skill}} <button (click)="removeSkill(skill)"><b>x</b></button></li>
+</ul>
+<hr>
+update 
+<form >
+    <input type="text" [(ngModel)]="name" name="name">
+</form>
+<hr>
+<h2>add skill</h2>
+<form (submit)="addskill(skill.value)">
+    <div>
+        <label>skill</label>
+    <input type="text" #skill>
+    <button type="submit">Submit</button>
+    
+    </div>
+</form>
+<h3>name: {{name}}</h3>
+<h3>address: {{address.street}}</h3>
