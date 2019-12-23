@@ -1,4 +1,4 @@
-<input type="text" #name (keyup)="setname(name.value)" class="form-control">
+<!-- <input type="text" #name (keyup)="setname(name.value)" class="form-control">
 hello {{namevalue}}
 <app-child-component (inputValueFromChild)="setname($event)"></app-child-component>
 <button class="btn-success">dddd</button>
@@ -10,5 +10,7 @@ hello {{namevalue}}
     </li>
 </ul>
 
-<div *ngIf="namevalue==1">Content to render when condition is true.</div>
-<app-aboutus></app-aboutus>
+<div *ngIf="namevalue==1">Content to render when condition is true.</div> -->
+<button (click)="gotoTable()">table</button>
+<button (click)="gotoAbout()">aboutus</button>
+<router-outlet></router-outlet>

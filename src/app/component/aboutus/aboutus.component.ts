@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../../service/todo.service';
+import { Todo } from '../../models/todo.mdel';
 
 @Component({
   selector: 'app-aboutus',
@@ -16,34 +18,50 @@ export class AboutusComponent implements OnInit {
 
   // array
   private skills: string[];
+ 
+  // service
+  private todoLsit: Todo[] = [];
 
-  constructor() { }
+  private isEdit: boolean;
+
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+
     this.address = {
       street: '341',
       city: 'mittapap',
       province: 'lampang'
     };
+
     this.skills = [
       'php',
       'web',
       'js'
     ];
 
+    // call service
+    this.todoService.getTodoList().subscribe((res: any[]) => {
+        this.todoLsit = res;
+    });
   }
 
-  addskill(skill){
+  addskill(skill) {
     this.skills.unshift(skill); // add array
     return false;
   }
 
-  removeSkill(skill){
+  removeSkill(skill) {
     this.skills.forEach((element, index) => {
-      if(element == skill) {
+      if (element === skill) {
           this.skills.splice(index, 1); // delete array
       }
     });
   }
 
+  hide() {
+    this.isEdit = !this.isEdit;
+  }
 }
+
+
