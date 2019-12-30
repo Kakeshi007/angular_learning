@@ -20,7 +20,7 @@ export class AppComponent {
     {name : 'days'}
   ];
 
-  constructor(private testSW: TestserviceService, private router:Router) {
+  constructor(private testSW: TestserviceService, private router: Router) {
     this.testservice = testSW;
   }
 
@@ -29,12 +29,9 @@ export class AppComponent {
     this.testservice.hellog();
   }
 
-  gotoTable(){
-    this.router.navigate(['table']);
+  goto(page) {
+    this.router.navigate([page]);
+    // console.log(page);
   }
 
-  gotoAbout(){
-    this.router.navigate(['aboutus']);
-    // this.router.navigate(['show',{first:data.first,last:data.last}])
-  }
 }

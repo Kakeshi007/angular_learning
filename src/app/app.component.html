@@ -11,6 +11,8 @@ hello {{namevalue}}
 </ul>
 
 <div *ngIf="namevalue==1">Content to render when condition is true.</div> -->
-<button (click)="gotoTable()">table</button>
-<button (click)="gotoAbout()">aboutus</button>
+<button (click)="goto('table')">table</button>
+<button (click)="goto('aboutus')">aboutus</button>
+<button (click)="goto('page')">page</button>
+<button (click)="goto('grid')">grid</button>
 <router-outlet></router-outlet>

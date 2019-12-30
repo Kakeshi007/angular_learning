@@ -11,6 +11,10 @@ import { AboutusComponent } from './component/aboutus/aboutus.component';
 import { FormsModule } from '@angular/forms';
 import { TodoService } from './service/todo.service';
 import { TableComponent } from './component/table/table.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PaginationComponent } from './component/pagination/pagination.component';
+import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { TablefromgridComponent } from './component/tablefromgrid/tablefromgrid.component';
 
 
 @NgModule({
@@ -18,13 +22,19 @@ import { TableComponent } from './component/table/table.component';
     AppComponent,
     ChildComponentComponent,
     AboutusComponent,
-    TableComponent
+    TableComponent,
+    PaginationComponent,
+    TablefromgridComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    RoutingMainModule
+    RoutingMainModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [TestserviceService, TodoService],
   bootstrap: [AppComponent]
