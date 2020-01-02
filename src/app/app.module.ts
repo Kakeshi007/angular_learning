@@ -13,7 +13,7 @@ import { TodoService } from './service/todo.service';
 import { TableComponent } from './component/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationComponent } from './component/pagination/pagination.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { TablefromgridComponent } from './component/tablefromgrid/tablefromgrid.component';
 
 
@@ -34,7 +34,9 @@ import { TablefromgridComponent } from './component/tablefromgrid/tablefromgrid.
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [TestserviceService, TodoService],
   bootstrap: [AppComponent]
