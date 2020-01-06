@@ -16,6 +16,7 @@ import { PaginationComponent } from './component/pagination/pagination.component
 import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { TablefromgridComponent } from './component/tablefromgrid/tablefromgrid.component';
 import { BankComponent } from './component/bank/bank.component';
+import { ViewComponent } from './component/bank/view/view.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { BankComponent } from './component/bank/bank.component';
     TableComponent,
     PaginationComponent,
     TablefromgridComponent,
-    BankComponent
+    BankComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

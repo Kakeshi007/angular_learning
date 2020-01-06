@@ -13,4 +13,8 @@ export class GarbageService {
     return this.http.get(this.url);
   }
 
+  getBankByID(id) {
+    return this.http.get(this.url + id);
+  }
+
 }

@@ -6,14 +6,15 @@ import { AboutusComponent} from '../component/aboutus/aboutus.component';
 import { PaginationComponent } from '../component/pagination/pagination.component';
 import { TablefromgridComponent } from '../component/tablefromgrid/tablefromgrid.component';
 import { BankComponent } from '../component/bank/bank.component';
-import { from } from 'rxjs';
+import { ViewComponent } from '../component/bank/view/view.component';
 
 const routes: Routes = [
    {path: 'table', component: TableComponent},
    {path: 'aboutus', component: AboutusComponent},
    {path: 'page', component: PaginationComponent},
    {path: 'grid', component: TablefromgridComponent},
-   {path: 'bank', component: BankComponent}
+   {path: 'bank', component: BankComponent},
+   {path: 'bankview/:id', component: ViewComponent}
 ];
 @NgModule({
   exports: [ RouterModule ],

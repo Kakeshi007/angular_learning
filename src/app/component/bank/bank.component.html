@@ -8,7 +8,7 @@
         <!-- userId Column -->
         <ng-container matColumnDef="id" >
           <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          <td mat-cell *matCellDef="let element"> <a [routerLink]="['/bankview', element.id]" >{{element.id}}</a> </td>
         </ng-container>
     
         <!-- id Column -->
