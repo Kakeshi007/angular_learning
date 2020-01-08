@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { ChildComponentComponent } from './child-component/child-component.component';
 import { TestserviceService } from './testservice.service';
 import { AboutusComponent } from './component/aboutus/aboutus.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { TodoService } from './service/todo.service';
 import { TableComponent } from './component/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,8 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, 
 import { TablefromgridComponent } from './component/tablefromgrid/tablefromgrid.component';
 import { BankComponent } from './component/bank/bank.component';
 import { ViewComponent } from './component/bank/view/view.component';
+import { CustomersComponent } from './component/customers/customers.component';
+import { CustomerFormComponent } from './component/customer-form/customer-form.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ViewComponent } from './component/bank/view/view.component';
     PaginationComponent,
     TablefromgridComponent,
     BankComponent,
-    ViewComponent
+    ViewComponent,
+    CustomersComponent,
+    CustomerFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ import { ViewComponent } from './component/bank/view/view.component';
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule 
   ],
   providers: [TestserviceService, TodoService],
   bootstrap: [AppComponent]
