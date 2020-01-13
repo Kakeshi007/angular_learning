@@ -11,8 +11,14 @@ import { GarbageService } from '../../service/garbage.service';
 export class CustomerFormComponent implements OnInit {
    private id: string;
    private result: any;
+   private formObj: any;
   // private company: string;
-  formGroup = new FormGroup({
+  formGroupUpdate = new FormGroup({
+    company: new FormControl(''),
+    address: new FormControl(''),
+  });
+
+  formGroupAdd = new FormGroup({
     company: new FormControl(''),
     address: new FormControl(''),
   });
@@ -26,8 +32,17 @@ export class CustomerFormComponent implements OnInit {
 
   async onSubmit() {
     // TODO: Use EventEmitter with form value3
-    this.result = await this.customer.updateCustomer(this.id, this.formGroup.value);
-    console.warn(this.result);
+    this.formObj = this.formGroupUpdate.getRawValue();
+    this.result = await this.customer.updateCustomer(this.id, this.formObj);
+    //console.warn(this.result);
+  }
+
+  async onAdd() {
+    // TODO: Use EventEmitter with form value3
+    this.formObj = this.formGroupAdd.getRawValue();
+    // console.log(this.formObj);
+    this.result = await this.customer.addCustomer(this.formObj);
+    console.log(this.result);
   }
  
 }

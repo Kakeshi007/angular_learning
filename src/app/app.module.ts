@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingMainModule } from './routing-main/routing-main.module';
-
+import { MatIconModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { ChildComponentComponent } from './child-component/child-component.component';
@@ -13,12 +14,12 @@ import { TodoService } from './service/todo.service';
 import { TableComponent } from './component/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PaginationComponent } from './component/pagination/pagination.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { TablefromgridComponent } from './component/tablefromgrid/tablefromgrid.component';
 import { BankComponent } from './component/bank/bank.component';
 import { ViewComponent } from './component/bank/view/view.component';
 import { CustomersComponent } from './component/customers/customers.component';
 import { CustomerFormComponent } from './component/customer-form/customer-form.component';
+
 
 
 @NgModule({
@@ -45,7 +46,9 @@ import { CustomerFormComponent } from './component/customer-form/customer-form.c
     MatSortModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    MatIconModule,
+    FontAwesomeModule
   ],
   providers: [TestserviceService, TodoService],
   bootstrap: [AppComponent]

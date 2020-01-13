@@ -5,6 +5,10 @@ import { MatFormField } from '@angular/material/form-field'
 import { CustomerModel } from '../../models/customers.model';
 import { GarbageService } from '../../service/garbage.service';
 import { MatSort } from '@angular/material';
+import { MatIconRegistry } from '@angular/material/icon';
+import {DomSanitizer} from '@angular/platform-browser';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-customers',
@@ -13,14 +17,19 @@ import { MatSort } from '@angular/material';
 })
 export class CustomersComponent implements OnInit {
   customerList: CustomerModel[] = [];
-  displayedColumns: string[] = ['id', 'company', 'taxnumber', 'changwat'];
+  displayedColumns: string[] = ['id', 'company', 'taxnumber', 'changwat', 'delete'];
+  faTrash = faTrash;
   dataSource = new MatTableDataSource;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
 
-  constructor(private customerService: GarbageService) { }
+  constructor(private customerService: GarbageService, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'thumbs-up',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/img/examples/thumbup-icon.svg'));
+   }
 
   async ngOnInit() {
     this.customerList =  await this.getCustomer();
@@ -33,6 +42,12 @@ export class CustomersComponent implements OnInit {
     return this.customerService.getCustomer().toPromise().then((res: CustomerModel[]) => {
       return  res;
     });
+  }
+
+  delete(id){
+    if(confirm('Are you sure to delete ' + id)) {
+      return this.customerService.delete(id);
+    }
   }
 
 }
