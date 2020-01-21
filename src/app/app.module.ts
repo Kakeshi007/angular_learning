@@ -2,7 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingMainModule } from './routing-main/routing-main.module';
-import { MatIconModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import { MatIconModule, 
+  MatTableModule, 
+  MatPaginatorModule,
+   MatSortModule, 
+   MatFormFieldModule, 
+   MatInputModule,
+   MatCheckboxModule
+  } from '@angular/material';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
@@ -19,6 +26,7 @@ import { BankComponent } from './component/bank/bank.component';
 import { ViewComponent } from './component/bank/view/view.component';
 import { CustomersComponent } from './component/customers/customers.component';
 import { CustomerFormComponent } from './component/customer-form/customer-form.component';
+import { CheckboxComponent } from './component/checkbox/checkbox.component';
 
 
 
@@ -34,6 +42,7 @@ import { CustomerFormComponent } from './component/customer-form/customer-form.c
     ViewComponent,
     CustomersComponent,
     CustomerFormComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +57,8 @@ import { CustomerFormComponent } from './component/customer-form/customer-form.c
     MatInputModule,
     ReactiveFormsModule ,
     MatIconModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatCheckboxModule
   ],
   providers: [TestserviceService, TodoService],
   bootstrap: [AppComponent]

@@ -9,6 +9,8 @@ import { BankComponent } from '../component/bank/bank.component';
 import { ViewComponent } from '../component/bank/view/view.component';
 import { CustomersComponent } from '../component/customers/customers.component';
 import { CustomerFormComponent } from '../component/customer-form/customer-form.component';
+import { CheckboxComponent } from '../component/checkbox/checkbox.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
    {path: 'table', component: TableComponent},
@@ -18,7 +20,8 @@ const routes: Routes = [
    {path: 'bank', component: BankComponent},
    {path: 'bankview/:id', component: ViewComponent},
    {path: 'customers', component: CustomersComponent},
-   {path: 'customer-form/:id/:company', component: CustomerFormComponent}
+   {path: 'customer-form/:id/:company', component: CustomerFormComponent},
+   {path: 'checkbox', component: CheckboxComponent}
 ];
 @NgModule({
   exports: [ RouterModule ],
