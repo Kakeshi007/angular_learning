@@ -13,7 +13,7 @@ import { GarbageService } from 'src/app/service/garbage.service';
   styleUrls: ['./checkbox.component.css']
 })
 export class CheckboxComponent {
-  displayedColumns: string[] = ['id', 'bankname', 'bank_img'];
+  displayedColumns: string[] = ['select', 'id', 'bankname', 'bank_img'];
   dataSource: any;
   selection: any;
   bankList: Bank[] = [];
