@@ -53,4 +53,12 @@ export class CheckboxComponent {
       return res['rs'];
     });
   }
+
+  getCheckbox(){
+  
+    console.log(this.selection);
+    for(let i = 0; i < this.selection['_selected'].length; i++){
+      console.log(this.selection['_selected'][i]['bankname']);
+    }
+  }
 }
